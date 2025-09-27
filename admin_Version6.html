@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard | Ellianna's Eggs</title>
+  <meta name="description" content="Admin dashboard for managing Ellianna's Eggs orders, products, blog articles, subscriptions, and subscribers.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="blog.html">Blog</a>
+      <a href="account.html">Account</a>
+      <a href="admin.html" aria-current="page">Admin</a>
+      <a href="chat.html">Ask AI</a>
+      <button onclick="openCart()">Cart</button>
+    </nav>
+  </header>
+  <main>
+    <section class="admin-panel">
+      <h1>Admin Dashboard</h1>
+      <button onclick="signInWithGoogle()">Sign in as Admin</button>
+      <div id="admin-controls" style="display:none;">
+        <section>
+          <h2>Products</h2>
+          <form id="product-form">
+            <input type="text" id="product-name" placeholder="Product Name" required>
+            <input type="text" id="product-desc" placeholder="Product Description" required>
+            <input type="text" id="product-img" placeholder="Image URL (assets/eggs1.jpg)" required>
+            <input type="number" id="product-price" placeholder="Price" required step="0.01">
+            <button type="submit">Add Product</button>
+          </form>
+          <div id="product-list"></div>
+        </section>
+        <section>
+          <h2>Blog Articles</h2>
+          <form id="blog-form">
+            <input type="text" id="blog-title" placeholder="Title" required>
+            <textarea id="blog-content" placeholder="Content" required rows="4"></textarea>
+            <button type="submit">Post Article</button>
+          </form>
+          <div id="blog-list-admin"></div>
+        </section>
+        <section>
+          <h2>Newsletter Subscribers</h2>
+          <div id="subscriber-list"></div>
+        </section>
+        <section>
+          <h2>Subscriptions</h2>
+          <div id="subscription-list"></div>
+        </section>
+        <section>
+          <h2>Order Management</h2>
+          <div id="order-admin-list">
+            <!-- Orders managed by admin -->
+          </div>
+        </section>
+        <section>
+          <h2>Admin FAQ</h2>
+          <details>
+            <summary>How do I delete a product?</summary>
+            <p>Click "Delete" next to the product name.</p>
+          </details>
+          <details>
+            <summary>How do I post a blog article?</summary>
+            <p>Fill out the blog form above and click "Post Article".</p>
+          </details>
+          <details>
+            <summary>Who can access this dashboard?</summary>
+            <p>Only admins listed in the system can sign in and see controls.</p>
+          </details>
+        </section>
+      </div>
+      <p>Admin features require Google sign-in and listed admin email.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Ellianna's Eggs | <a href="shop.html">Shop</a> | <a href="newsletter.html">Newsletter</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

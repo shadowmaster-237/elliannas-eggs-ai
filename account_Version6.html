@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Account | Ellianna's Eggs</title>
+  <meta name="description" content="View your order history, manage subscriptions, and update your profile at Ellianna's Eggs.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="blog.html">Blog</a>
+      <a href="account.html" aria-current="page">Account</a>
+      <a href="admin.html">Admin</a>
+      <a href="chat.html">Ask AI</a>
+      <button onclick="openCart()">Cart</button>
+    </nav>
+  </header>
+  <main>
+    <section class="account-hero">
+      <h1>Welcome to Your Account</h1>
+      <p>Manage your orders, subscriptions, and newsletter settings here. For instant help, use our <a href="chat.html">AI chatbot</a>.</p>
+      <img src="assets/account-hero.jpg" alt="Account management" style="max-width:400px;border-radius:1rem;">
+    </section>
+    <section class="account-signin">
+      <h2>Sign In</h2>
+      <button onclick="signInWithGoogle()">Sign in with Google</button>
+      <p>Your info is always secure. We never sell your data.</p>
+    </section>
+    <section class="account-orders">
+      <h2>Your Orders</h2>
+      <div id="order-history">
+        <!-- Order history will be injected here -->
+      </div>
+    </section>
+    <section class="account-subscriptions">
+      <h2>Your Subscriptions</h2>
+      <div id="subscription-history">
+        <!-- Subscription history injected by JS -->
+      </div>
+      <p>Need to pause, cancel, or upgrade? <a href="chat.html">Ask AI</a> or email support@elliannaseggs.com.</p>
+    </section>
+    <section class="account-newsletter">
+      <h2>Newsletter Settings</h2>
+      <form onsubmit="event.preventDefault(); unsubscribeNewsletter();">
+        <button type="submit">Unsubscribe from Newsletter</button>
+      </form>
+      <p>Manage your subscription anytime. Re-subscribe in <a href="newsletter.html">Newsletter</a>.</p>
+    </section>
+    <section class="account-profile">
+      <h2>Profile</h2>
+      <form id="profile-form" onsubmit="event.preventDefault(); updateProfile();">
+        <input type="text" id="profile-name" placeholder="Your Name">
+        <input type="email" id="profile-email" placeholder="Your Email">
+        <input type="text" id="profile-address" placeholder="Your Address">
+        <button type="submit">Update Profile</button>
+      </form>
+      <div id="profile-status"></div>
+    </section>
+    <section class="account-faq">
+      <h2>Account FAQ</h2>
+      <details>
+        <summary>How do I change my subscription?</summary>
+        <p>Use the subscription section above, or contact us for custom options.</p>
+      </details>
+      <details>
+        <summary>Can I view my past orders?</summary>
+        <p>Yes, see the Orders section above.</p>
+      </details>
+      <details>
+        <summary>How do I update my address?</summary>
+        <p>Use the Profile form above or contact support.</p>
+      </details>
+      <details>
+        <summary>Is my info secure?</summary>
+        <p>We use encrypted databases and never share your data.</p>
+      </details>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Ellianna's Eggs | <a href="shop.html">Shop</a> | <a href="newsletter.html">Newsletter</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

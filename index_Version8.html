@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ellianna's Eggs | Farm-Fresh Eggs Delivered Locally</title>
+  <meta name="description" content="Buy Ellianna's Eggs: Local, organic, premium eggs delivered to your door. Freshest farm eggs in town.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Ellianna's Eggs | Farm-Fresh Eggs Delivered Locally" />
+  <meta property="og:description" content="Buy Ellianna's Eggs: Local, organic, premium eggs delivered to your door. Freshest farm eggs in town." />
+  <meta property="og:image" content="assets/hero.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://yourdomain.com/" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="blog.html">Blog</a>
+      <a href="account.html">Account</a>
+      <a href="admin.html">Admin</a>
+      <a href="chat.html">Ask AI</a>
+      <button onclick="openCart()" aria-label="Open cart">Cart</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Ellianna's Eggs: Farm-Fresh, Local, Delivered</h1>
+      <p>Discover the freshest eggs in town, hand-gathered and delivered to your door. Try our basket today!</p>
+      <img src="assets/hero.jpg" alt="Basket of farm-fresh eggs from Ellianna's Eggs" style="max-width:300px;border-radius:1rem;">
+      <a class="btn" href="shop.html">Shop Now</a>
+      <a class="btn" href="chat.html">Ask Our AI</a>
+    </section>
+    <section class="products" aria-label="Featured Products" id="featured-products">
+      <!-- Products injected by JS -->
+    </section>
+    <section class="newsletter">
+      <h2>Get Weekly Specials & Farm Updates</h2>
+      <form onsubmit="event.preventDefault(); subscribeNewsletter(document.getElementById('newsletter-email').value);">
+        <input id="newsletter-email" type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="newsletter-benefits">
+        <ul>
+          <li>Exclusive farm-to-table deals delivered to your inbox</li>
+          <li>Early access to seasonal products</li>
+          <li>Tips & recipes from Ellianna</li>
+          <li>Special birthday and holiday coupons</li>
+          <li>Unsubscribe anytime</li>
+        </ul>
+      </div>
+    </section>
+    <section class="reviews" aria-label="Customer Reviews">
+      <h2>What Locals Say</h2>
+      <blockquote>
+        <p>"Best eggs we've ever had! Delivery is always on time." <br>– Sarah W.</p>
+      </blockquote>
+      <blockquote>
+        <p>"Love supporting local farms. The organic eggs taste amazing!" <br>– Mike B.</p>
+      </blockquote>
+      <blockquote>
+        <p>"My kids love the herb baskets! Super fresh and flavorful." <br>– Liz D.</p>
+      </blockquote>
+      <blockquote>
+        <p>"Subscriptions make life so easy – never run out!" <br>– Chris T.</p>
+      </blockquote>
+      <div class="write-review">
+        <h3>Write your review</h3>
+        <form id="review-form" onsubmit="event.preventDefault(); submitReview();">
+          <input type="text" id="reviewer-name" placeholder="Your Name" required>
+          <textarea id="review-content" placeholder="Your Review" required></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+        <div id="reviews-list"></div>
+      </div>
+    </section>
+    <section id="latest-blog" aria-label="Latest Blog Articles">
+      <h2>Latest from the Blog</h2>
+      <div id="blog-preview"></div>
+      <a href="blog.html" class="btn">See All Blog Posts</a>
+    </section>
+    <section id="subscribe-section">
+      <h2>Subscribe for Regular Deliveries</h2>
+      <form id="subscription-form" onsubmit="event.preventDefault(); subscribePlan();">
+        <select id="plan-type">
+          <option value="weekly">Weekly Eggs</option>
+          <option value="monthly">Monthly Eggs</option>
+          <option value="herb">Herb Box</option>
+        </select>
+        <input type="email" id="sub-email" placeholder="Your email" required>
+        <button type="submit">Start Subscription</button>
+      </form>
+      <div class="subscription-benefits">
+        <ul>
+          <li>Farm-fresh eggs delivered to your doorstep</li>
+          <li>Flexible plans: weekly, monthly, or custom</li>
+          <li>Herb baskets available all seasons</li>
+          <li>Early cancellation, pause, or upgrade options</li>
+          <li>Priority support for subscribers</li>
+        </ul>
+      </div>
+      <div class="subscription-faq">
+        <h3>FAQ</h3>
+        <p><strong>How do I change my plan?</strong> Visit your account page or contact us!</p>
+        <p><strong>Can I pause my subscription?</strong> Yes, anytime.</p>
+        <p><strong>Do you deliver to my area?</strong> Check our zip code tool in the shop!</p>
+      </div>
+    </section>
+    <section class="ai-highlight">
+      <h2>AI-Powered Shopping Help</h2>
+      <p>Ask our AI anything: product advice, health tips, herb pairings, and more. Try it in the <a href="chat.html">Ask AI</a> section.</p>
+      <ul>
+        <li>Personalized recommendations</li>
+        <li>Egg health facts</li>
+        <li>Herb selection for your recipes</li>
+        <li>Shopping assistance</li>
+        <li>Farm and subscription info</li>
+      </ul>
+      <p>Powered by GPT-4.1-level intelligence, always learning from real customer questions.</p>
+    </section>
+    <section class="gallery">
+      <h2>Farm Gallery</h2>
+      <div class="gallery-grid">
+        <img src="assets/gallery1.jpg" alt="Free-range hens in the field">
+        <img src="assets/gallery2.jpg" alt="Fresh eggs in basket">
+        <img src="assets/gallery3.jpg" alt="Herb garden at sunrise">
+        <img src="assets/gallery4.jpg" alt="Team packing subscriptions">
+        <img src="assets/gallery5.jpg" alt="Eggs delivered to doorstep">
+        <img src="assets/gallery6.jpg" alt="Farmers at work">
+      </div>
+    </section>
+    <section class="about">
+      <h2>About Ellianna's Eggs</h2>
+      <p>
+        Ellianna's Eggs is a family-run local farm specializing in organic eggs and herbs. We believe in sustainable farming, animal welfare, and bringing the best of our fields to your kitchen. Our farm is certified organic, and we’re proud to serve our community with transparency and care.
+      </p>
+      <ul>
+        <li>Established in 2012</li>
+        <li>Local delivery</li>
+        <li>Certified organic</li>
+        <li>Open for farm tours & events</li>
+        <li>Community-supported agriculture</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-columns">
+      <div>
+        <h3>Contact</h3>
+        <p>Email: hello@elliannaseggs.com<br>Phone: 555-123-4567</p>
+        <p>Address: 123 Egg Lane, Farmville, USA</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="account.html">My Account</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Social</h3>
+        <ul>
+          <li><a href="https://instagram.com/elliannaseggs" target="_blank">Instagram</a></li>
+          <li><a href="https://facebook.com/elliannaseggs" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com/elliannaseggs" target="_blank">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2025 Ellianna's Eggs | <a href="newsletter.html">Newsletter</a> | <a href="account.html">My Account</a></p>
+    <p class="footer-legal">All content &copy; Ellianna's Eggs. Site powered by AI & local farm love.</p>
+  </footer>
+  <div id="cart-drawer" aria-label="Cart Drawer">
+    <h2>Your Cart</h2>
+    <button onclick="closeCart()">Close</button>
+    <!-- Cart items will be injected here -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

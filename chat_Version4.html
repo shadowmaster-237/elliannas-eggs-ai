@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ask Our AI | Ellianna's Eggs</title>
+  <meta name="description" content="Chat with our AI assistant for herb recommendations, egg benefits, and personalized shopping help.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="blog.html">Blog</a>
+      <a href="account.html">Account</a>
+      <a href="admin.html">Admin</a>
+      <a href="chat.html" aria-current="page">Ask AI</a>
+      <button onclick="openCart()">Cart</button>
+    </nav>
+  </header>
+  <main>
+    <section class="chat-hero">
+      <h1>Ask Our AI Chatbot</h1>
+      <p>
+        Get herb recommendations, learn about egg health benefits, get product advice, and shop smarter—powered by GPT-4.1-level AI!
+      </p>
+      <img src="assets/chat-hero.jpg" alt="AI chatbot farm" style="max-width:400px;border-radius:1rem;">
+    </section>
+    <section id="chatbox">
+      <div id="messages"></div>
+      <form id="chat-form" onsubmit="event.preventDefault(); sendMessage();">
+        <input type="text" id="chat-input" placeholder="Ask me anything..." autocomplete="off" required>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+    <section class="chat-examples">
+      <h2>Try These:</h2>
+      <ul>
+        <li>"What herbs help sleep?"</li>
+        <li>"What are the health benefits of eggs?"</li>
+        <li>"Recommend a product for breakfast."</li>
+        <li>"I want to buy Italian herbs."</li>
+        <li>"How do I start a subscription?"</li>
+        <li>"Can I get farm delivery?"</li>
+      </ul>
+    </section>
+    <section class="chat-faq">
+      <h2>Chatbot FAQ</h2>
+      <details>
+        <summary>Is my data private?</summary>
+        <p>Yes. No messages are stored by the chatbot, and conversations are encrypted.</p>
+      </details>
+      <details>
+        <summary>Can the AI recommend products?</summary>
+        <p>Yes! It can help you shop, choose herbs, eggs, and more.</p>
+      </details>
+      <details>
+        <summary>Can I use the chatbot for customer service?</summary>
+        <p>Absolutely. It can answer most questions or direct you to a human if needed.</p>
+      </details>
+    </section>
+    <section class="chat-contact">
+      <h2>Need More Help?</h2>
+      <p>Email support@elliannaseggs.com or call 555-123-4567 for live assistance.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Ellianna's Eggs | <a href="shop.html">Shop</a> | <a href="newsletter.html">Newsletter</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

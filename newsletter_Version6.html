@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Newsletter Signup | Ellianna's Eggs</title>
+  <meta name="description" content="Join the Ellianna's Eggs newsletter for farm updates, recipes, and exclusive specials.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="newsletter.html" aria-current="page">Newsletter</a>
+      <a href="blog.html">Blog</a>
+      <a href="account.html">Account</a>
+      <a href="admin.html">Admin</a>
+      <a href="chat.html">Ask AI</a>
+      <button onclick="openCart()">Cart</button>
+    </nav>
+  </header>
+  <main>
+    <section class="newsletter-hero">
+      <h1>Sign Up for Our Newsletter</h1>
+      <p>Get farm news, recipes, exclusive deals, and subscriber-only perks delivered to your inbox every week!</p>
+      <img src="assets/newsletter-hero.jpg" alt="Eggs and herbs newsletter" style="max-width:400px;border-radius:1rem;">
+    </section>
+    <section class="newsletter-signup">
+      <h2>Subscribe Now</h2>
+      <form onsubmit="event.preventDefault(); subscribeNewsletter(document.getElementById('newsletter-email').value);">
+        <input id="newsletter-email" type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p>We value your privacy. Unsubscribe anytime with one click.</p>
+      <div class="newsletter-benefits">
+        <ul>
+          <li>Weekly farm news & tips</li>
+          <li>Exclusive subscriber-only deals</li>
+          <li>Seasonal recipes</li>
+          <li>Early access to new products</li>
+          <li>Birthday surprises</li>
+        </ul>
+      </div>
+    </section>
+    <section class="newsletter-archive">
+      <h2>Recent Newsletters</h2>
+      <div class="newsletter-list">
+        <div class="newsletter-item">
+          <h3>Summer Egg Harvest</h3>
+          <small>Sent: 2025-06-15</small>
+          <p>Our hens laid record numbers! Get 10% off jumbo eggs all June.</p>
+        </div>
+        <div class="newsletter-item">
+          <h3>Herb Basket Special</h3>
+          <small>Sent: 2025-05-01</small>
+          <p>Fresh basil and thyme now available. Try our new herb baskets in the shop.</p>
+        </div>
+        <div class="newsletter-item">
+          <h3>Farm Tour Invitation</h3>
+          <small>Sent: 2025-04-12</small>
+          <p>Join us for an open farm day! RSVP in your account.</p>
+        </div>
+      </div>
+    </section>
+    <section class="newsletter-faq">
+      <h2>Newsletter FAQ</h2>
+      <details>
+        <summary>How often will I receive emails?</summary>
+        <p>We send newsletters every 7-10 days. Special offers may be sent 1-2 times per month.</p>
+      </details>
+      <details>
+        <summary>Can I unsubscribe?</summary>
+        <p>Yes, use the link in any email or your account page.</p>
+      </details>
+      <details>
+        <summary>Can I suggest content?</summary>
+        <p>Send your ideas to hello@elliannaseggs.com. We love to feature subscriber stories!</p>
+      </details>
+    </section>
+    <section class="newsletter-contact">
+      <h2>Contact Newsletter Team</h2>
+      <p>Questions or feedback? Email newsletter@elliannaseggs.com or use the <a href="chat.html">AI chatbot</a> for instant help.</p>
+    </section>
+    <section class="newsletter-gallery">
+      <h2>Subscriber Gallery</h2>
+      <div class="gallery-grid">
+        <img src="assets/subscriber-1.jpg" alt="Subscriber enjoying eggs">
+        <img src="assets/subscriber-2.jpg" alt="Farm tour group">
+        <img src="assets/subscriber-3.jpg" alt="Herb basket delivered">
+        <img src="assets/subscriber-4.jpg" alt="Family breakfast with Ellianna's Eggs">
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Ellianna's Eggs | <a href="shop.html">Shop</a> | <a href="account.html">My Account</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog | Ellianna's Eggs</title>
+  <meta name="description" content="Farm stories, tips, recipes, and updates from Ellianna's Eggs. Discover life on the farm, our sustainable practices, and new products.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="account.html">Account</a>
+      <a href="admin.html">Admin</a>
+      <a href="chat.html">Ask AI</a>
+      <button onclick="openCart()">Cart</button>
+    </nav>
+  </header>
+  <main>
+    <section class="blog-hero">
+      <h1>Ellianna's Eggs Blog</h1>
+      <p>Welcome to our farm journal! Explore stories, recipes, tips, and fresh news from the fields.</p>
+      <img src="assets/blog-hero.jpg" alt="Farm blog hero" style="max-width:400px;border-radius:1rem;">
+    </section>
+    <section id="blog-list">
+      <!-- Blog articles injected by JS -->
+    </section>
+    <section class="blog-topics">
+      <h2>Topics</h2>
+      <ul>
+        <li>Farm Life</li>
+        <li>Recipes</li>
+        <li>Egg Nutrition</li>
+        <li>Herb Tips</li>
+        <li>Sustainability</li>
+        <li>Seasonal Specials</li>
+      </ul>
+    </section>
+    <section class="blog-featured">
+      <h2>Featured Articles</h2>
+      <div class="blog-featured-articles">
+        <div class="blog-article">
+          <h3>Eggs: Nature's Perfect Protein</h3>
+          <p>Discover why eggs are one of the healthiest foods on earth and how Ellianna's Eggs stand out.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="blog-article">
+          <h3>Herb Pairings for Breakfast</h3>
+          <p>Learn which herbs elevate your morning eggs and how to plant your own kitchen garden.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="blog-article">
+          <h3>Farm Sustainability Journey</h3>
+          <p>Our story of going 100% organic and what it means for you and the planet.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+    </section>
+    <section class="blog-contribute">
+      <h2>Contribute to the Blog</h2>
+      <p>Have a recipe, farm tip, or story to share? Email blog@elliannaseggs.com or submit your idea below!</p>
+      <form id="blog-contribute-form" onsubmit="event.preventDefault(); submitBlogIdea();">
+        <input type="text" id="blog-contribute-name" placeholder="Your Name" required>
+        <textarea id="blog-contribute-idea" placeholder="Your Article Idea" required></textarea>
+        <button type="submit">Submit Idea</button>
+      </form>
+      <div id="blog-ideas-list"></div>
+    </section>
+    <section class="blog-faq">
+      <h2>Farm Blog FAQ</h2>
+      <details>
+        <summary>Who writes the blog?</summary>
+        <p>Our team, local chefs, and guest farmers. Want to contribute? Email us!</p>
+      </details>
+      <details>
+        <summary>How often is the blog updated?</summary>
+        <p>New articles every week, plus seasonal posts and event coverage.</p>
+      </details>
+      <details>
+        <summary>Can I request a topic?</summary>
+        <p>Yes! Submit your topic via the form above or email us.</p>
+      </details>
+    </section>
+    <section class="blog-newsletter">
+      <h2>Subscribe to Blog Updates</h2>
+      <form onsubmit="event.preventDefault(); subscribeNewsletter(document.getElementById('blog-newsletter-email').value);">
+        <input id="blog-newsletter-email" type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Ellianna's Eggs | <a href="newsletter.html">Newsletter</a> | <a href="account.html">My Account</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

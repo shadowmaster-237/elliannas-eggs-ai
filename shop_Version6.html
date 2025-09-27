@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop Fresh Eggs & Herbs | Ellianna's Eggs</title>
+  <meta name="description" content="Farm-fresh eggs, baskets, herbs, and local organic specials. Shop now and get delivery or subscription!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html" aria-current="page">Shop</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="blog.html">Blog</a>
+      <a href="account.html">Account</a>
+      <a href="admin.html">Admin</a>
+      <a href="chat.html">Ask AI</a>
+      <button onclick="openCart()">Cart</button>
+    </nav>
+  </header>
+  <main>
+    <section class="shop-hero">
+      <h1>Shop Farm Fresh</h1>
+      <p>Browse our selection of eggs, herb baskets, and seasonal farm products. All organic, all local, all delicious!</p>
+      <img src="assets/shop-hero.jpg" alt="Farm shop display" style="max-width:400px;border-radius:1rem;">
+    </section>
+    <section class="products" id="shop-products">
+      <!-- Products injected by JS -->
+    </section>
+    <section class="shop-filters">
+      <h2>Filter Products</h2>
+      <form id="product-filter-form" onsubmit="event.preventDefault(); filterProducts();">
+        <select id="product-category">
+          <option value="all">All</option>
+          <option value="eggs">Eggs</option>
+          <option value="herbs">Herbs</option>
+          <option value="baskets">Baskets</option>
+          <option value="seasonal">Seasonal</option>
+        </select>
+        <input type="text" id="product-search" placeholder="Search products..." autocomplete="off">
+        <button type="submit">Filter</button>
+      </form>
+      <div id="filter-tags">
+        <span class="tag">Organic</span>
+        <span class="tag">Local</span>
+        <span class="tag">Picked Today</span>
+        <span class="tag">Free-range</span>
+        <span class="tag">New Arrivals</span>
+      </div>
+    </section>
+    <section class="shop-info">
+      <h2>Why Buy From Us?</h2>
+      <ul>
+        <li>100% organic, non-GMO eggs</li>
+        <li>Hand-picked herbs for freshness</li>
+        <li>Subscription & delivery available</li>
+        <li>Farm-to-table guarantee</li>
+        <li>Local pickup or doorstep delivery</li>
+        <li>Secure checkout</li>
+      </ul>
+      <div class="shop-cta">
+        <a class="btn" href="checkout.html">Proceed to Checkout</a>
+        <a class="btn" href="chat.html">Ask AI for Recommendations</a>
+      </div>
+    </section>
+    <section class="shop-gallery">
+      <h2>Popular Products</h2>
+      <div class="gallery-grid">
+        <img src="assets/egg-basket.jpg" alt="Egg basket">
+        <img src="assets/herbs-box.jpg" alt="Herb box">
+        <img src="assets/jumbo-eggs.jpg" alt="Jumbo eggs">
+        <img src="assets/farm-special.jpg" alt="Farm special">
+      </div>
+    </section>
+    <section class="shop-faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>How are eggs packed?</summary>
+        <p>Eggs are packed in recycled, compostable cartons. Each carton is inspected for quality and cleanliness.</p>
+      </details>
+      <details>
+        <summary>How do I subscribe?</summary>
+        <p>Choose a subscription plan on the home page or in your account settings, then confirm via email.</p>
+      </details>
+      <details>
+        <summary>Can I pick up my order?</summary>
+        <p>Yes! Select "local pickup" at checkout for no-delivery-fee pickup at 123 Egg Lane, Farmville.</p>
+      </details>
+      <details>
+        <summary>Do you offer gift baskets?</summary>
+        <p>Absolutely! Choose "Gift" in the shop or contact us for custom baskets.</p>
+      </details>
+      <details>
+        <summary>Are the herbs organic?</summary>
+        <p>All herbs are grown organically and hand-picked on delivery day.</p>
+      </details>
+    </section>
+    <section class="shop-newsletter">
+      <h2>Get Shop Updates & Specials</h2>
+      <form onsubmit="event.preventDefault(); subscribeNewsletter(document.getElementById('shop-newsletter-email').value);">
+        <input id="shop-newsletter-email" type="email" placeholder="Your email" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+    <section class="shop-contact">
+      <h2>Contact Us</h2>
+      <p>Need help with your order or want to suggest a new product? Email us at shop@elliannaseggs.com or call 555-123-4567.</p>
+      <a class="btn" href="chat.html">Ask AI for Help</a>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Ellianna's Eggs | <a href="newsletter.html">Newsletter</a> | <a href="account.html">My Account</a></p>
+  </footer>
+  <div id="cart-drawer">
+    <h2>Your Cart</h2>
+    <button onclick="closeCart()">Close</button>
+    <!-- Cart items will be injected here -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
